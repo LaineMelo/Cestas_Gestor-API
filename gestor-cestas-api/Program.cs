@@ -37,16 +37,11 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseHttpsRedirection();
+
 app.UseRouting();
 
 app.UseCors("AllowAnyOrigin");
-
-app.UseHttpsRedirection();
-
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
 
 if (app.Environment.IsDevelopment())
 {
@@ -57,5 +52,10 @@ if (app.Environment.IsDevelopment())
     });
 }
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers();
+});
 
 app.Run();
+
