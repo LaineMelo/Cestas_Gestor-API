@@ -41,7 +41,16 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseCors("AllowAnyOrigin");
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors(builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+}
+
 
 if (app.Environment.IsDevelopment())
 {
