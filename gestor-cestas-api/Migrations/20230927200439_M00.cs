@@ -26,7 +26,7 @@ namespace gestor_cestas_api.Migrations
                     Bairro = table.Column<string>(type: "TEXT", nullable: true),
                     Numero = table.Column<string>(type: "TEXT", nullable: true),
                     Cidade = table.Column<string>(type: "TEXT", nullable: true),
-                    Foto = table.Column<byte[]>(type: "BLOB", nullable: true)
+                    Estado = table.Column<byte[]>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
